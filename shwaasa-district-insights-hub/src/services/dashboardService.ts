@@ -373,7 +373,7 @@
 // };
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://api.shwaasa-insights.com/api';
-const DEV_API_URL = import.meta.env.VITE_DEV_API_URL || 'http://localhost:5000/api';
+const DEV_API_URL = import.meta.env.VITE_DEV_API_URL || 'https://shwasa-district-insight-dashboard.onrender.com/api';
 const isProduction = import.meta.env.PROD;
 const CURRENT_API_URL = isProduction ? API_BASE_URL : DEV_API_URL;
 
