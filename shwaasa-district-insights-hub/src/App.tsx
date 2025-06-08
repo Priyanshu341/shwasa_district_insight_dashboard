@@ -43,7 +43,7 @@
 // );
 
 // export default App;
-import { Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Index from "./pages/Index"; // Your dashboard page
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -52,26 +52,28 @@ import { ThemeProvider } from "@/components/theme-provider";
 function App() {
   return (
     <ThemeProvider>
-    <Routes>
-      {/* Default route redirects to login */}
-      <Route path="/" element={<Navigate to="/login" replace />} />
+      <BrowserRouter>
+        <Routes>
+          {/* Default route redirects to login */}
+          <Route path="/" element={<Navigate to="/login" replace />} />
 
-      {/* Public route */}
-      <Route path="/login" element={<Login />} />
+          {/* Public route */}
+          <Route path="/login" element={<Login />} />
 
-      {/* Protected route */}
-      <Route
-        path="/dashboard"
-        element={
-          <ProtectedRoute>
-            <Index />
-          </ProtectedRoute>
-        }
-      />
+          {/* Protected route */}
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Index />
+              </ProtectedRoute>
+            }
+          />
 
-      {/* Optional: Catch-all route */}
-      <Route path="*" element={<Navigate to="/login" replace />} />
-    </Routes>
+          {/* Catch-all route redirects to login */}
+          <Route path="*" element={<Navigate to="/login" replace />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
