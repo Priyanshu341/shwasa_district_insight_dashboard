@@ -155,7 +155,7 @@ const AbdmExportBar = () => {
 
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button
+{/*               <Button
                 variant="outline"
                 size="sm"
                 className="flex items-center gap-1 bg-background/50 backdrop-blur-sm hover:bg-primary/10"
@@ -163,7 +163,7 @@ const AbdmExportBar = () => {
               >
                 <RefreshCcw className="h-4 w-4" />
                 Sync with State Dashboard
-              </Button>
+              </Button> */}
             </TooltipTrigger>
             <TooltipContent>Push latest data to State Health Dashboard</TooltipContent>
           </Tooltip>
